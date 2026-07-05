@@ -18,3 +18,18 @@ variable "environment" {
   type    = string
   default = "dev"
 }
+variable "vnet_name" {
+  type    = string
+  default = "vnet-demo"
+}
+variable "vnet_address_space" {
+  type    = list(string)
+  default = ["10.0.0.0/16"]
+}
+variable "subnets" {
+  description = "Subnet configuration"
+
+  type = map(object({
+    address_prefixes = list(string)
+  }))
+}
