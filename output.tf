@@ -1,12 +1,15 @@
 output "vm_name" {
-  value = azurerm_linux_virtual_machine.vm.name
+  value = module.compute.vm_name
 }
+
 output "pub-ip" {
-  value = azurerm_public_ip.pip.ip_address
+  value = module.compute.public_ip
 }
+
 output "virtual_network_name" {
-  value = azurerm_virtual_network.vnet.name
+  value = module.network.vnet_name
 }
-output "subnet_name" {
-  value = azurerm_subnet.subnet.name
+
+output "subnet_names" {
+  value = module.network.subnet_names
 }
